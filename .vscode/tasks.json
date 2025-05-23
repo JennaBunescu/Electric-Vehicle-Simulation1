@@ -1,0 +1,101 @@
+{
+    "comment1": "// See https://go.microsoft.com/fwlink/?LinkId=733558",
+    "comment2": "// for the documentation about the tasks.json format",
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "${workspaceFolder}/bin/main",
+                "-I",
+                "${workspaceFolder}/headers",
+                "-ggdb",
+                "${workspaceFolder}/source/*.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build-windows-sfml",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "source/main.cpp",
+                "source/driver_input.cpp",
+                "source/vehicle.cpp",
+                "source/components.cpp", 
+                "-IC:/SFML-2.6.2/include",
+                "-LC:/SFML-2.6.2/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-o",
+                "bin/main.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "build-mac-sfml",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "source/main.cpp",
+                "source/driver_input.cpp",
+                "source/vehicle.cpp",
+                "source/components.cpp",   
+                "-I/opt/homebrew/include",
+                "-L/opt/homebrew/lib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-o",
+                "bin/main"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./bin/main",
+            "problemMatcher": []
+        },
+        {
+            "label": "run tests",
+            "type": "shell",
+            "command": "./bin/testmain",
+            "problemMatcher": []
+        },
+        {
+            "label": "run on windows cmd shell",
+            "type": "shell",
+            "command": "${workspaceFolder}/bin/main.exe",
+            "options": {
+                "cwd": "bin"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "run tests on windows cmd shell",
+            "type": "shell",
+            "command": "${workspaceFolder}/bin/testmain.exe",
+            "options": {
+                "cwd": "bin"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
