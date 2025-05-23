@@ -1,6 +1,4 @@
 // Jenna Bunescu
-// Jesiah Le
-// CS172 Final project
 // Simulation of an Electrical vehicle
 #include <iostream>
 #include <string>
