@@ -15,7 +15,7 @@
 // https://en.cppreference.com/w/cpp/thread/sleep_for
 // https://cplusplus.com/reference/string/string/find/
 // https://cplusplus.com/reference/string/string/substr/
-// We learned all the SFML functionality from this code on this website: https://www.sfml-dev.org/tutorials/2.6/
+// I learned all the SFML functionality from this code on this website: https://www.sfml-dev.org/tutorials/2.6/
 
 using namespace std;
 
